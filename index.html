@@ -518,6 +518,14 @@
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
 
+    <?php
+      $counts = ("counter.txt");
+      $hits = file($counts);
+      $hits[0] ++;
+      $fp = fopen($counts, "w");
+      fputs($fp , "$hits[0]");
+      fclose($fp);
+    ?>
 </body>
 
 </html>
